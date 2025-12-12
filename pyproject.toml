@@ -1,7 +1,7 @@
 [project]
 name = "qmap"
 version = "0.1.0"
-description = "A sample Python project"
+description = "Toolkit for solving the Qubit Mapping Problem."
 readme = "README.md"
 requires-python = "==3.11.3"
 license = {text = "MIT"}
