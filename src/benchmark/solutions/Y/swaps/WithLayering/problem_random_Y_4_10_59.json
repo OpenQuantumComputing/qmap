@@ -1,0 +1,432 @@
+{
+    "problem": {
+        "gates": [
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 9
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 9
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 13
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l4",
+                "line2": "l3",
+                "duration": 15
+            },
+            {
+                "line1": "l3",
+                "line2": "l4",
+                "duration": 10
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 15
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 12
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 12
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 10
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 14
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 14
+            },
+            {
+                "line1": "l2",
+                "line2": "l1",
+                "duration": 12
+            },
+            {
+                "line1": "l2",
+                "line2": "l1",
+                "duration": 14
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 17
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 15
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 24
+            },
+            {
+                "line1": "l3",
+                "line2": "l1",
+                "duration": 10
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 17
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 12
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 10
+            }
+        ],
+        "topology": [
+            [
+                "p1",
+                "p2"
+            ],
+            [
+                "p1",
+                "p3"
+            ],
+            [
+                "p1",
+                "p4"
+            ]
+        ],
+        "swap_time": 15
+    },
+    "dynamic_graph_solution": {
+        "solution": {
+            "bit_assignment": {
+                "p1": "l4",
+                "p2": "l2",
+                "p3": "l3",
+                "p4": "l1"
+            },
+            "operations": [
+                {
+                    "time": 0,
+                    "gate": 0,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 9,
+                    "gate": 1,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 18,
+                    "gate": 2,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 28,
+                    "gate": 5,
+                    "edge": [
+                        "p1",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 43,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 58,
+                    "gate": 3,
+                    "edge": [
+                        "p4",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 71,
+                    "gate": 4,
+                    "edge": [
+                        "p4",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 81,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 96,
+                    "gate": 6,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 106,
+                    "gate": 9,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 118,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 133,
+                    "gate": 7,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 148,
+                    "gate": 8,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 158,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 173,
+                    "gate": 10,
+                    "edge": [
+                        "p1",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 185,
+                    "gate": 11,
+                    "edge": [
+                        "p1",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 195,
+                    "gate": 12,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 209,
+                    "gate": 13,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 223,
+                    "gate": 14,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 235,
+                    "gate": 15,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 249,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 264,
+                    "gate": 16,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 281,
+                    "gate": 17,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 291,
+                    "gate": 18,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 306,
+                    "gate": 19,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 316,
+                    "gate": 20,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 340,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 355,
+                    "gate": 22,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 372,
+                    "gate": 23,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 384,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 399,
+                    "gate": 21,
+                    "edge": [
+                        "p1",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 409,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 424,
+                    "gate": 24,
+                    "edge": [
+                        "p3",
+                        "p1"
+                    ]
+                }
+            ]
+        },
+        "runtime": 0.0679006576538086,
+        "depth": 434,
+        "swaps": 8,
+        "metrics": {
+            "duration": 6416,
+            "noise_delta": 0.40078199566965583,
+            "gate_count": 8,
+            "heavy_output_prob": 0.6845703125,
+            "depth": 219
+        }
+    }
+}

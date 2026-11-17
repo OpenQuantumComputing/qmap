@@ -1,0 +1,708 @@
+{
+    "problem": {
+        "gates": [
+            {
+                "line1": "l1",
+                "line2": "l4",
+                "duration": 13
+            },
+            {
+                "line1": "l1",
+                "line2": "l4",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l5",
+                "duration": 5
+            },
+            {
+                "line1": "l5",
+                "line2": "l2",
+                "duration": 5
+            },
+            {
+                "line1": "l2",
+                "line2": "l5",
+                "duration": 5
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 5
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 5
+            },
+            {
+                "line1": "l4",
+                "line2": "l2",
+                "duration": 14
+            },
+            {
+                "line1": "l5",
+                "line2": "l3",
+                "duration": 17
+            },
+            {
+                "line1": "l5",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l3",
+                "line2": "l4",
+                "duration": 11
+            },
+            {
+                "line1": "l3",
+                "line2": "l4",
+                "duration": 10
+            },
+            {
+                "line1": "l5",
+                "line2": "l1",
+                "duration": 17
+            },
+            {
+                "line1": "l5",
+                "line2": "l1",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 16
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 14
+            },
+            {
+                "line1": "l3",
+                "line2": "l2",
+                "duration": 15
+            },
+            {
+                "line1": "l3",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 19
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l5",
+                "duration": 16
+            },
+            {
+                "line1": "l4",
+                "line2": "l1",
+                "duration": 11
+            },
+            {
+                "line1": "l1",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 15
+            },
+            {
+                "line1": "l3",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l3",
+                "duration": 14
+            },
+            {
+                "line1": "l1",
+                "line2": "l3",
+                "duration": 14
+            },
+            {
+                "line1": "l4",
+                "line2": "l5",
+                "duration": 19
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 23
+            },
+            {
+                "line1": "l2",
+                "line2": "l4",
+                "duration": 14
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 15
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 14
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 17
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 12
+            },
+            {
+                "line1": "l2",
+                "line2": "l3",
+                "duration": 10
+            },
+            {
+                "line1": "l4",
+                "line2": "l1",
+                "duration": 13
+            },
+            {
+                "line1": "l4",
+                "line2": "l1",
+                "duration": 10
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 15
+            },
+            {
+                "line1": "l1",
+                "line2": "l2",
+                "duration": 10
+            },
+            {
+                "line1": "l5",
+                "line2": "l4",
+                "duration": 21
+            },
+            {
+                "line1": "l4",
+                "line2": "l5",
+                "duration": 12
+            },
+            {
+                "line1": "l4",
+                "line2": "l5",
+                "duration": 14
+            }
+        ],
+        "topology": [
+            [
+                "p1",
+                "p2"
+            ],
+            [
+                "p2",
+                "p3"
+            ],
+            [
+                "p3",
+                "p4"
+            ],
+            [
+                "p4",
+                "p5"
+            ]
+        ],
+        "swap_time": 15
+    },
+    "dynamic_graph_solution": {
+        "solution": {
+            "bit_assignment": {
+                "p1": "l4",
+                "p2": "l1",
+                "p3": "l2",
+                "p4": "l5",
+                "p5": "l3"
+            },
+            "operations": [
+                {
+                    "time": 0,
+                    "gate": 0,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 0,
+                    "gate": 2,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 5,
+                    "gate": 3,
+                    "edge": [
+                        "p4",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 10,
+                    "gate": 4,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 13,
+                    "gate": 1,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 15,
+                    "gate": 9,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 23,
+                    "gate": null,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 32,
+                    "gate": 10,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 38,
+                    "gate": 5,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 42,
+                    "gate": null,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 48,
+                    "gate": 6,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 53,
+                    "gate": 7,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 57,
+                    "gate": null,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 58,
+                    "gate": 8,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 72,
+                    "gate": 13,
+                    "edge": [
+                        "p5",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 72,
+                    "gate": null,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 87,
+                    "gate": 11,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 89,
+                    "gate": 14,
+                    "edge": [
+                        "p5",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 98,
+                    "gate": 12,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 99,
+                    "gate": 15,
+                    "edge": [
+                        "p4",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 108,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 115,
+                    "gate": 16,
+                    "edge": [
+                        "p4",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 129,
+                    "gate": 21,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 129,
+                    "gate": null,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 144,
+                    "gate": 17,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 145,
+                    "gate": 22,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 156,
+                    "gate": null,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 159,
+                    "gate": 18,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 169,
+                    "gate": 19,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 171,
+                    "gate": 29,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 188,
+                    "gate": 20,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 198,
+                    "gate": null,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 213,
+                    "gate": 23,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 223,
+                    "gate": 24,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 233,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 248,
+                    "gate": 25,
+                    "edge": [
+                        "p3",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 263,
+                    "gate": 26,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 273,
+                    "gate": 27,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 273,
+                    "gate": 30,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 287,
+                    "gate": 28,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 296,
+                    "gate": 31,
+                    "edge": [
+                        "p3",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 301,
+                    "gate": null,
+                    "edge": [
+                        "p1",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 316,
+                    "gate": null,
+                    "edge": [
+                        "p2",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 331,
+                    "gate": 32,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 331,
+                    "gate": 37,
+                    "edge": [
+                        "p4",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 344,
+                    "gate": 38,
+                    "edge": [
+                        "p4",
+                        "p3"
+                    ]
+                },
+                {
+                    "time": 346,
+                    "gate": 33,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 354,
+                    "gate": 41,
+                    "edge": [
+                        "p5",
+                        "p4"
+                    ]
+                },
+                {
+                    "time": 360,
+                    "gate": 34,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 375,
+                    "gate": 42,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 377,
+                    "gate": 35,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 387,
+                    "gate": 43,
+                    "edge": [
+                        "p4",
+                        "p5"
+                    ]
+                },
+                {
+                    "time": 389,
+                    "gate": 36,
+                    "edge": [
+                        "p2",
+                        "p1"
+                    ]
+                },
+                {
+                    "time": 399,
+                    "gate": 39,
+                    "edge": [
+                        "p3",
+                        "p2"
+                    ]
+                },
+                {
+                    "time": 414,
+                    "gate": 40,
+                    "edge": [
+                        "p3",
+                        "p2"
+                    ]
+                }
+            ]
+        },
+        "runtime": 0.7128360271453857,
+        "depth": 424,
+        "swaps": 11,
+        "metrics": {
+            "duration": 6480,
+            "noise_delta": 0.7000679313932039,
+            "gate_count": 11,
+            "heavy_output_prob": 0.7041015625,
+            "depth": 232
+        }
+    }
+}

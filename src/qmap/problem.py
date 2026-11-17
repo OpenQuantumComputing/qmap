@@ -31,11 +31,11 @@ class Problem:
 
 
     def logical_qubit_names(self) -> list[str] :
-        return list(sorted(set(q_name for gate in self.gates for q_name in gate.pair)))
+        return sorted(set(q_name for gate in self.gates for q_name in gate.pair))
 
 
     def hardware_qubit_names(self) -> list[str] :
-        return list(sorted(set(q_name for pair in self.hardware_edges for q_name in pair)))
+        return sorted(set(q_name for pair in self.hardware_edges for q_name in pair))
 
 
     def debug_print_problem(self) -> None:

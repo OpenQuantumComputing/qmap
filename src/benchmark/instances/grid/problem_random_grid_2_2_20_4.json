@@ -1,0 +1,220 @@
+{
+  "problem": {
+    "gates": [
+      {
+        "line1": "l2",
+        "line2": "l1",
+        "duration": 11
+      },
+      {
+        "line1": "l2",
+        "line2": "l1",
+        "duration": 14
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 12
+      },
+      {
+        "line1": "l3",
+        "line2": "l1",
+        "duration": 11
+      },
+      {
+        "line1": "l1",
+        "line2": "l3",
+        "duration": 10
+      },
+      {
+        "line1": "l2",
+        "line2": "l3",
+        "duration": 13
+      },
+      {
+        "line1": "l2",
+        "line2": "l3",
+        "duration": 10
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 11
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 13
+      },
+      {
+        "line1": "l3",
+        "line2": "l4",
+        "duration": 10
+      },
+      {
+        "line1": "l2",
+        "line2": "l3",
+        "duration": 13
+      },
+      {
+        "line1": "l2",
+        "line2": "l3",
+        "duration": 14
+      },
+      {
+        "line1": "l3",
+        "line2": "l2",
+        "duration": 24
+      },
+      {
+        "line1": "l3",
+        "line2": "l2",
+        "duration": 14
+      },
+      {
+        "line1": "l1",
+        "line2": "l4",
+        "duration": 12
+      },
+      {
+        "line1": "l1",
+        "line2": "l4",
+        "duration": 10
+      },
+      {
+        "line1": "l4",
+        "line2": "l1",
+        "duration": 14
+      },
+      {
+        "line1": "l1",
+        "line2": "l4",
+        "duration": 10
+      },
+      {
+        "line1": "l2",
+        "line2": "l1",
+        "duration": 12
+      },
+      {
+        "line1": "l2",
+        "line2": "l1",
+        "duration": 10
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 12
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 14
+      },
+      {
+        "line1": "l2",
+        "line2": "l1",
+        "duration": 19
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 21
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 10
+      },
+      {
+        "line1": "l3",
+        "line2": "l4",
+        "duration": 12
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 10
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 11
+      },
+      {
+        "line1": "l4",
+        "line2": "l3",
+        "duration": 14
+      },
+      {
+        "line1": "l2",
+        "line2": "l3",
+        "duration": 30
+      },
+      {
+        "line1": "l3",
+        "line2": "l2",
+        "duration": 11
+      },
+      {
+        "line1": "l3",
+        "line2": "l2",
+        "duration": 10
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 12
+      },
+      {
+        "line1": "l1",
+        "line2": "l2",
+        "duration": 14
+      },
+      {
+        "line1": "l3",
+        "line2": "l1",
+        "duration": 18
+      },
+      {
+        "line1": "l3",
+        "line2": "l1",
+        "duration": 14
+      },
+      {
+        "line1": "l3",
+        "line2": "l2",
+        "duration": 7
+      },
+      {
+        "line1": "l1",
+        "line2": "l4",
+        "duration": 42
+      },
+      {
+        "line1": "l1",
+        "line2": "l4",
+        "duration": 10
+      }
+    ],
+    "topology": [
+      [
+        "p1",
+        "p2"
+      ],
+      [
+        "p1",
+        "p3"
+      ],
+      [
+        "p2",
+        "p4"
+      ],
+      [
+        "p3",
+        "p4"
+      ]
+    ],
+    "swap_time": 15
+  }
+}
