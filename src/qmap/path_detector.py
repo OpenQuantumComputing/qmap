@@ -1,10 +1,10 @@
 class MinPathDetector:
     """An algorithm that finds all minimal paths in an undirected graph of at least a minimal given length.
     A path is minimal if it does not visit a node more than once, and if the path can not be shortened be removing a set of the inne nodes.
-    This means there can be no edge between to nodes in the path that are not neighbours in the path."""
+    This means there can be no edge between to nodes in the path that are not neighbours in the path.
+    """
 
-
-    paths : list[list[list[list[int]]]]
+    paths: list[list[list[list[int]]]]
     """The minimal paths to be returned from the current call to the algorithm.
     The level 0 (outermost) list groups the paths by their start nodes.
     The level 1 list groups the paths of the given start node by their end nodes.
@@ -14,31 +14,33 @@ class MinPathDetector:
     and the last node in a path will always be the end node the path is grouped under.
     """
 
-    current_node_paths : list[list[list[int]]]
+    current_node_paths: list[list[list[int]]]
     """The paths found for the currently selected start nod in the algorithm."""
 
-    current_path : list[int]
+    current_path: list[int]
     """The current path being built. The algorithm will search for all possible completions of this path first."""
 
-    min_path_length : int
+    min_path_length: int
     """The minimal length of the returned paths."""
 
     nmb_nodes: int
     """The number of nodes in the graph. It is assumed that the nodes in the graph are all integers from 0 to the maximal node number given in the input edges."""
 
-    neighbours : list[list[int]]
+    neighbours: list[list[int]]
     """The edge neighbours for each node."""
 
     def __init__(self) -> None:
 
-        self.paths : list[list[list[list[int]]]] = None
-        self.current_node_paths : list[list[list[int]]] = None
-        self.current_path : list[int] = None
+        self.paths: list[list[list[list[int]]]] = None
+        self.current_node_paths: list[list[list[int]]] = None
+        self.current_path: list[int] = None
         self.min_path_length = 0
         self.nmb_nodes = 0
-        self.neighbours : list[list[int]] = None
+        self.neighbours: list[list[int]] = None
 
-    def find_paths(self, edges : list[tuple[int, int]], min_path_length : int) -> list[list[list[list[int]]]]:
+    def find_paths(
+        self, edges: list[tuple[int, int]], min_path_length: int
+    ) -> list[list[list[list[int]]]]:
         """Finds all minimal paths in an undirected graph of at least a minimal given length.
         The returned list is first grouped by all start nodes, then by all end nodes, then all minimal paths are listed between the two nodes.
         Each path lists the visited nodes, including the start and end nodes it is grouped under.
@@ -74,11 +76,11 @@ class MinPathDetector:
 
         return self.paths
 
-    def _find_paths_from_node(self, node : int, parent : int, level : int) -> None:
+    def _find_paths_from_node(self, node: int, parent: int, level: int) -> None:
         """Searches for all possible minimal paths starting with the path in current_path with the given node appended.
         Minimal paths of desired length are stored in current_node_paths.
         It is assumed that the node to be appended is not already in current_path.
-        
+
         args:
             - node 'int' The next node to be appended to the graph.
             - parent 'int' Either the last node in current_path or -1 if current_path is empty.
@@ -89,7 +91,9 @@ class MinPathDetector:
         self.current_path.append(node)
         next_level = level + 1
 
-        if all((n not in self.current_path) for n in self.neighbours[node] if n != parent):
+        if all(
+            (n not in self.current_path) for n in self.neighbours[node] if n != parent
+        ):
             # The new node added does not have any neighbours in the current_path, exept parent (the previous node in the path). Therefore current_path is still minimal.
 
             # Store the path if it is long enough.

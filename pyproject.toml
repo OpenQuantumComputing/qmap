@@ -1,10 +1,23 @@
-[project]
-name = "qmap"
+[tool.poetry]
+name = "neqst-wp2"
 version = "0.1.0"
-description = "Toolkit for solving the Qubit Mapping Problem."
+description = ""
+authors = ["Your Name <you@example.com>"]
 readme = "README.md"
-requires-python = "==3.11.3"
-license = {text = "MIT"}
-dependencies = [
-    "qiskit==0.42.1",
-]
+package-mode = false 
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = ">=3.12,<3.14"
+ipykernel = "^6.29.4"
+networkx = "^3.3"
+qiskit-experiments = {extras = ["extras"], version = "^0.6.1"}
+setuptools = "^69.3.0"
+qaoa = "^1.0.4"
+qiskit = "^1.1.1"
+qiskit-ibm-runtime = "^0.24.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,24 +1,35 @@
-import sys
+import getopt
+import glob
 import json
 import os
-import glob
-import getopt
+import sys
 import time
+
+from depth_estimators import (
+    GateDependencyDepths,
+    IndexedPathSwapsDepthEstimator,
+)
+from dynamic_graph import (
+    DivingParameters,
+    DynamicGraph,
+    DynamicGraphParameters,
+    NodeGrouping,
+    TerminationCause,
+)
+from hardware_distance import HardwareDistance
 from problem import Problem
 from problem_encoding import ProblemEncoding
-from dynamic_graph import DynamicGraph, DynamicGraphParameters, DivingParameters, NodeGrouping, TerminationCause
 from solution import Solution, SolutionJob
 from swap_estimators import AllGatesQubitDistanceSwapEstimator
-from hardware_distance import HardwareDistance
-from depth_estimators import GateDependencyDepths, LeastSwapsDepthEstimator, PathSwapsDepthEstimator, IndexedPathSwapsDepthEstimator
 
-def to_solution(problem : Problem, optimality_ensured : bool, solution_json) -> Solution:
+
+def to_solution(problem: Problem, optimality_ensured: bool, solution_json) -> Solution:
 
     hardw_to_logical = solution_json["bit_assignment"]
-    jobs : list[SolutionJob] = []
+    jobs: list[SolutionJob] = []
     for operation in solution_json["operations"]:
         start = operation["time"]
-        gate_idx : int = operation["gate"]
+        gate_idx: int = operation["gate"]
         gate = None if gate_idx == None else problem.gates[gate_idx]
         duration = problem.swap_time if gate == None else gate.duration
         edge = operation["edge"]
@@ -26,7 +37,9 @@ def to_solution(problem : Problem, optimality_ensured : bool, solution_json) -> 
     return Solution(problem, optimality_ensured, hardw_to_logical, jobs)
 
 
-def solve_single_problem(file_path_in : str, file_path_out : str, parameters : DynamicGraphParameters) -> tuple[int, int, int]:
+def solve_single_problem(
+    file_path_in: str, file_path_out: str, parameters: DynamicGraphParameters
+) -> tuple[int, int, int]:
 
     with open(file_path_in, "r") as input_file:
         data = json.load(input_file)
@@ -49,7 +62,9 @@ def solve_single_problem(file_path_in : str, file_path_out : str, parameters : D
         if solution == None:
             print("Algorithm terminated without finding any solution")
         else:
-            raise Exception("Unexpected result: Algorithm terminated as EXHAUSTED, but also returned a solution.")
+            raise Exception(
+                "Unexpected result: Algorithm terminated as EXHAUSTED, but also returned a solution."
+            )
     elif cause == TerminationCause.TIMEOUT:
         if solution == None:
             print("Algorithm timed out, no solution found.")
@@ -84,7 +99,9 @@ def solve_single_problem(file_path_in : str, file_path_out : str, parameters : D
     return (len(problem.gates), solution_depth, solution_swaps)
 
 
-def solve_multi_problems(input_dir : str, output_dir : str, reg_exp : str, parameters : DynamicGraphParameters) -> None:
+def solve_multi_problems(
+    input_dir: str, output_dir: str, reg_exp: str, parameters: DynamicGraphParameters
+) -> None:
 
     search_path = os.path.join(input_dir, reg_exp)
     files = glob.glob(search_path)
@@ -97,18 +114,24 @@ def solve_multi_problems(input_dir : str, output_dir : str, reg_exp : str, param
         else:
             file_path_out = file_path_in.replace(input_dir, output_dir)
         t0 = time.time()
-        nmb_gates, sol_depth, sol_swaps = solve_single_problem(file_path_in, file_path_out, parameters)
+        nmb_gates, sol_depth, sol_swaps = solve_single_problem(
+            file_path_in, file_path_out, parameters
+        )
         t1 = time.time()
         solve_time = t1 - t0
         if sol_depth == None:
             bad_runs += 1
         # loc_file_name = file_path_in.replace(input_dir, "")
         # log_lines.append(f"{loc_file_name}\t{nmb_gates}\t{'?' if sol_depth == None else sol_depth}\t{'?' if sol_swaps == None else sol_swaps}\t{solve_time}")
-        log_lines.append(f"{file_path_in} gates={nmb_gates} depth={'?' if sol_depth == None else sol_depth} swaps={'?' if sol_swaps == None else sol_swaps} time={solve_time}")
+        log_lines.append(
+            f"{file_path_in} gates={nmb_gates} depth={'?' if sol_depth == None else sol_depth} swaps={'?' if sol_swaps == None else sol_swaps} time={solve_time}"
+        )
 
     print()
     if bad_runs > 0:
-        print(f"For {bad_runs} problems, either no solution was found or the optimal solution was missing in the input")
+        print(
+            f"For {bad_runs} problems, either no solution was found or the optimal solution was missing in the input"
+        )
     print()
     # print("File\tGates\tDepth\tSwaps\tTime")
     for ll in log_lines:
@@ -161,7 +184,7 @@ def parse_bool(value: str, default: bool) -> bool:
         return default
 
 
-if __name__=="__main__":
+if __name__ == "__main__":
 
     """
     Parameter options when calling 'run_dynamic_graph'
@@ -247,15 +270,34 @@ if __name__=="__main__":
     nmb_top_gate_dives = 20
     max_gates_top_dive = 6
     beam_width = 0
-    statistics_type : str = None
-    statistics_grouping : NodeGrouping = NodeGrouping.NONE
+    statistics_type: str = None
+    statistics_grouping: NodeGrouping = NodeGrouping.NONE
     admissible_heuristic = True
     remain_gates_weight = 0
     layering_active = False
     timeout_seconds = 0.0
 
     options = "a:b:d:D:f:g:I:i:L:l:m:O:o:r:s:S:t:u:"
-    long_options = ["admissible=", "beam_width=", "depth_objective=", "dive=", "frequency_diving=", "gates_dives=", "input_directory=", "input_file=", "layering_active=", "remain_gates_weight=", "max_gates_dives=", "output_directory=", "output_file=", "reg_exp=", "swaps_objective=", "statistics=", "timeout=", "unassigned_objective="]
+    long_options = [
+        "admissible=",
+        "beam_width=",
+        "depth_objective=",
+        "dive=",
+        "frequency_diving=",
+        "gates_dives=",
+        "input_directory=",
+        "input_file=",
+        "layering_active=",
+        "remain_gates_weight=",
+        "max_gates_dives=",
+        "output_directory=",
+        "output_file=",
+        "reg_exp=",
+        "swaps_objective=",
+        "statistics=",
+        "timeout=",
+        "unassigned_objective=",
+    ]
 
     try:
         arguments, values = getopt.getopt(opt_arguments, options, long_options)
@@ -275,9 +317,9 @@ if __name__=="__main__":
             elif argument in ("-g", "--gates_dives"):
                 nmb_top_gate_dives = parse_int(value, 20)
             elif argument in ("-I", "--input_directory"):
-                input_dir = value.replace("\\","/")
+                input_dir = value.replace("\\", "/")
             elif argument in ("-i", "--input_file"):
-                single_file_in = value.replace("\\","/")
+                single_file_in = value.replace("\\", "/")
             elif argument in ("-L", "--layering_active"):
                 layering_active = parse_bool(value, True)
             elif argument in ("-l", "--remain_gates_weight"):
@@ -285,33 +327,47 @@ if __name__=="__main__":
             elif argument in ("-m", "--max_gates_dives"):
                 max_gates_top_dive = parse_int(value, 6)
             elif argument in ("-O", "--output_directory"):
-                output_dir = value.replace("\\","/")
+                output_dir = value.replace("\\", "/")
             elif argument in ("-o", "--output_file"):
-                single_file_out = value.replace("\\","/")
+                single_file_out = value.replace("\\", "/")
             elif argument in ("-r", "--reg_exp"):
-                reg_exp = value.replace("\\","/")
+                reg_exp = value.replace("\\", "/")
             elif argument in ("-s", "--swaps_objective"):
                 swaps_objective = parse_int(value, 0)
             elif argument in ("-S", "--statistics"):
-                statistics_grouping = parse_statistics_grouping(value, NodeGrouping.REMAINING_GATES)
+                statistics_grouping = parse_statistics_grouping(
+                    value, NodeGrouping.REMAINING_GATES
+                )
             elif argument in ("-t", "--timeout"):
                 timeout_seconds = parse_float(value, 0.0)
             elif argument in ("-u", "--unassigned_objective"):
                 unassigned_objective = parse_int(value, 1)
 
         if not diving_enabled:
-            #-f -1 -g 0
+            # -f -1 -g 0
             diving_frequency = -1
             nmb_top_gate_dives = 0
 
-        parameters = DynamicGraphParameters(DivingParameters(diving_frequency, nmb_top_gate_dives, max_gates_top_dive), swaps_objective, depth_objective, unassigned_objective, beam_width, remain_gates_weight, statistics_grouping, layering_active, timeout_seconds)
+        parameters = DynamicGraphParameters(
+            DivingParameters(diving_frequency, nmb_top_gate_dives, max_gates_top_dive),
+            swaps_objective,
+            depth_objective,
+            unassigned_objective,
+            beam_width,
+            remain_gates_weight,
+            statistics_grouping,
+            layering_active,
+            timeout_seconds,
+        )
         if single_file_in != None:
             solve_single_problem(single_file_in, single_file_out, parameters)
         if input_dir != None:
             if reg_exp == None:
                 print("Can not run for all files in directory if not reg_exp is set")
             elif statistics_grouping != NodeGrouping.NONE:
-                print("Can not run for all files in directory with statistics turned on")
+                print(
+                    "Can not run for all files in directory with statistics turned on"
+                )
             else:
                 solve_multi_problems(input_dir, output_dir, reg_exp, parameters)
 
