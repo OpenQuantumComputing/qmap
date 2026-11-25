@@ -1,0 +1,15 @@
+{
+    "diving_parameters": {
+        "diving_frequency": 2000,
+        "nmb_top_gate_dives": 20,
+        "max_gates_top_dive": 6
+    },
+    "swaps_objective": 1,
+    "depth_objective": 0,
+    "unassigned_objective": 0,
+    "beam_width": 0,
+    "remain_gates_weight": 0,
+    "statistics_grouping": 0,
+    "layering_active": false,
+    "timeout_seconds": 500
+}

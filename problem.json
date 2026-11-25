@@ -1,0 +1,1 @@
+{"problem": {"gates": [{"line1": "l1", "line2": "l2", "duration": 5}, {"line1": "l2", "line2": "l3", "duration": 4}, {"line1": "l2", "line2": "l4", "duration": 4}], "topology": [["p1", "p2"], ["p2", "p3"], ["p3", "p4"]], "swap_time": 3}}
